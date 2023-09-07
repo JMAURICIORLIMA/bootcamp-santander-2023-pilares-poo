@@ -508,3 +508,362 @@ história.
 > https://www.youtube.com/watch?t=1101s&v=9ou608QQRq8
 
 ***Bons estudos a todos.***
+
+
+## Resulmão.
+### Encapsulamento
+O encapsulamento é um dos quatro princípios fundamentais da Programação Orientada a Objetos (POO), juntamente com a
+abstração, a herança e o polimorfismo. O encapsulamento é uma técnica que permite esconder os detalhes internos de uma
+classe e proteger seus dados de acesso não autorizado. Isso é feito definindo membros da classe como privados
+(ou protegidos) e fornecendo métodos públicos para acessar e manipular esses membros. O encapsulamento promove a
+modularidade e a manutenibilidade do código, uma vez que os detalhes internos de uma classe podem ser alterados sem
+afetar o código que a utiliza.
+
+Aqui estão os principais conceitos relacionados ao encapsulamento:
+
+1. **Atributos Privados**: Os atributos de uma classe (também chamados de campos ou variáveis de instância) são
+   declarados como privados (`private`) para que não possam ser acessados diretamente fora da classe.
+
+   ```java
+   private int idade;
+   ```
+
+2. **Métodos Públicos**: São fornecidos métodos públicos (também chamados de métodos getters e setters) para acessar e
+   modificar os atributos privados. Esses métodos controlam como os dados são lidos e gravados.
+
+   ```java
+   public int getIdade() {
+       return idade;
+   }
+
+   public void setIdade(int novaIdade) {
+       if (novaIdade >= 0) {
+           idade = novaIdade;
+       }
+   }
+   ```
+
+3. **Controle de Acesso**: O encapsulamento permite que você controle quem pode ler e escrever nos atributos da classe.
+   Por exemplo, ao fornecer apenas um método `get` para um atributo e não um método `set`, você torna esse atributo
+   somente leitura.
+
+4. **Proteção contra Acessos Indesejados**: O encapsulamento ajuda a proteger os dados da classe contra acessos
+   indesejados ou inválidos. No exemplo acima, verificamos se a nova idade é maior ou igual a zero antes de atualizar o
+   atributo `idade`.
+
+5. **Flexibilidade Interna**: Com o encapsulamento, você pode modificar a implementação interna de uma classe sem
+   afetar o código externo que a utiliza. Isso é útil para manter a estabilidade da interface pública enquanto refatora ou
+   melhora a implementação interna.
+
+6. **Manutenção Simplificada**: O encapsulamento torna mais fácil rastrear onde os dados são lidos e gravados na classe,
+   o que facilita a manutenção e a solução de problemas.
+
+Em resumo, o encapsulamento é uma técnica importante na POO que ajuda a proteger e organizar os dados e a
+funcionalidade de uma classe. Ele fornece uma interface pública clara e controlada para acessar e manipular esses dados,
+promovendo a segurança e a manutenibilidade do código.
+#
+### Herança
+
+A herança é um dos quatro princípios fundamentais da Programação Orientada a Objetos (POO), juntamente com o
+encapsulamento, a abstração e o polimorfismo. A herança é um conceito que permite criar uma nova classe (a classe
+derivada ou subclasse) a partir de uma classe existente (a classe base ou superclasse), herdando seus atributos e
+métodos. Isso promove a reutilização de código e facilita a criação de hierarquias de classes.
+
+Aqui estão os principais conceitos relacionados à herança:
+
+1. **Superclasse e Subclasse**: A classe base é chamada de superclasse e a classe derivada é chamada de subclasse. A
+subclasse herda os atributos e métodos da superclasse.
+
+2. **Extensão**: A herança é implementada usando a palavra-chave `extends` no Java. A subclasse estende a superclasse
+para herdar seus membros.
+
+   ```java
+   class Superclasse {
+       // Atributos e métodos da superclasse
+   }
+
+   class Subclasse extends Superclasse {
+       // Atributos e métodos da subclasse
+   }
+   ```
+
+3. **Reutilização de Código**: A herança permite reutilizar o código da superclasse na subclasse. Isso significa que
+você não precisa reescrever os membros da superclasse na subclasse, a menos que deseje modificá-los.
+
+4. **Adição de Funcionalidade**: Além de herdar membros da superclasse, a subclasse pode adicionar novos atributos e
+métodos ou modificar os existentes.
+
+5. **Relação "É-um"**: A herança modela uma relação "é-um". Por exemplo, se você tem uma superclasse `Animal` e uma
+subclasse `Cachorro`, pode dizer que "um cachorro é um animal".
+
+6. **Polimorfismo**: O polimorfismo é outro conceito importante relacionado à herança. Ele permite que você trate
+objetos da subclasse como objetos da superclasse, o que é útil para escrever código genérico.
+
+7. **Sobrescrita de Métodos**: A subclasse pode sobrescrever (override) métodos da superclasse para fornecer uma
+implementação específica da subclasse.
+
+   ```java
+   class Superclasse {
+       void metodo() {
+           // Implementação na superclasse
+       }
+   }
+
+   class Subclasse extends Superclasse {
+       @Override
+       void metodo() {
+           // Implementação na subclasse (sobrescrita)
+       }
+   }
+   ```
+
+8. **Chamada de Métodos da Superclasse**: A subclasse pode chamar métodos da superclasse usando a palavra-chave `super`.
+
+   ```java
+   class Subclasse extends Superclasse {
+       void metodoDaSubclasse() {
+           super.metodo(); // Chama o método da superclasse
+       }
+   }
+   ```
+
+A herança é um conceito poderoso na POO que permite criar hierarquias de classes e organizar o código de forma
+eficiente. No entanto, deve ser usado com cuidado para evitar hierarquias muito profundas e complexas. Em alguns casos,
+a composição (outra técnica de POO) pode ser preferível à herança.
+#
+### Abstração 
+
+A abstração é um dos quatro princípios fundamentais da Programação Orientada a Objetos (POO), juntamente com o
+encapsulamento, a herança e o polimorfismo. A abstração é um conceito fundamental que envolve a simplificação de
+complexidade, focando apenas nos aspectos relevantes e essenciais de um objeto ou sistema.
+
+Aqui estão os principais conceitos relacionados à abstração:
+
+1. **Modelagem Simplificada**: A abstração envolve a criação de modelos simplificados de objetos do mundo real. Em vez
+de representar todos os detalhes de um objeto, você se concentra apenas nos aspectos que são relevantes para o problema
+em questão.
+
+2. **Classes e Objetos**: Em POO, as classes são abstrações que definem estruturas de objetos, e os objetos são
+instâncias dessas classes. Por exemplo, uma classe `Carro` é uma abstração que representa carros em geral, enquanto um
+objeto `MeuCarro` é uma instância específica dessa classe.
+
+3. **Membros Abstratos**: Em uma classe, você pode declarar membros (atributos e métodos) que são abstratos, ou seja,
+não têm implementação concreta. Esses membros são definidos nas subclasses.
+
+   ```java
+   abstract class Veiculo {
+       // Método abstrato (sem implementação)
+       abstract void acelerar();
+
+       // Atributo comum
+       String cor;
+   }
+   ```
+
+4. **Classes Abstratas**: Uma classe abstrata é uma classe que contém um ou mais membros abstratos. Ela não pode ser
+instanciada diretamente, mas pode ser usada como base para outras classes.
+
+   ```java
+   abstract class Animal {
+       abstract void fazerBarulho();
+   }
+
+   class Cachorro extends Animal {
+       void fazerBarulho() {
+           System.out.println("O cachorro faz latidos.");
+       }
+   }
+   ```
+
+5. **Modelo de Negócios**: A abstração é frequentemente usada para criar modelos de negócios que representam conceitos
+do mundo real de forma simplificada. Por exemplo, uma classe `Pedido` pode abstrair os detalhes de um pedido de compra.
+
+6. **Simplificação da Complexidade**: A abstração ajuda a simplificar a complexidade do mundo real, tornando-o mais
+gerenciável para programadores e mais compreensível para os usuários.
+
+7. **Separação de Preocupações**: A abstração permite separar preocupações diferentes em classes separadas. Isso
+promove a modularidade e a manutenibilidade do código.
+
+A abstração é fundamental para a POO, pois permite criar modelos e sistemas que representam o mundo real de forma
+eficiente. Ela ajuda a reduzir a complexidade, facilitando a compreensão e a manutenção do código. Além disso, a
+abstração promove a reutilização de código, uma vez que você pode criar classes abstratas que servem como base para
+outras classes relacionadas.
+#
+### Polimorfismo
+
+O polimorfismo é um dos quatro princípios fundamentais da Programação Orientada a Objetos (POO), juntamente com o
+encapsulamento, a herança e a abstração. O polimorfismo é um conceito que permite que objetos de classes diferentes
+sejam tratados de maneira uniforme, ou seja, permite que um objeto seja usado como se fosse de um tipo diferente.
+
+Há dois tipos principais de polimorfismo em POO:
+
+1. **Polimorfismo de Subtipo (ou Polimorfismo de Herança)**: Este tipo de polimorfismo ocorre quando uma classe
+derivada (subclasse) é tratada como uma instância da classe base (superclasse). Isso significa que você pode usar um
+objeto da subclasse onde um objeto da superclasse é esperado.
+
+   Exemplo:
+
+   ```java
+   // Superclasse
+   class Animal {
+       void fazerBarulho() {
+           System.out.println("O animal faz algum som.");
+       }
+   }
+
+   // Subclasse
+   class Cachorro extends Animal {
+       void fazerBarulho() {
+           System.out.println("O cachorro faz latidos.");
+       }
+   }
+
+   public class Main {
+       public static void main(String[] args) {
+           Animal meuAnimal = new Cachorro(); // Polimorfismo de subtipo
+           meuAnimal.fazerBarulho(); // Chama o método da subclasse
+       }
+   }
+   ```
+
+2. **Polimorfismo de Parametrização (ou Polimorfismo de Interface)**: Este tipo de polimorfismo ocorre quando um método
+pode aceitar argumentos de tipos diferentes, desde que esses tipos implementem uma interface comum ou sejam subtipos de
+uma classe comum. Isso permite que você escreva código genérico que pode ser reutilizado com diferentes tipos de
+objetos.
+
+   Exemplo:
+
+   ```java
+   // Interface comum
+   interface Barulhento {
+       void fazerBarulho();
+   }
+
+   // Classes que implementam a interface
+   class Cachorro implements Barulhento {
+       void fazerBarulho() {
+           System.out.println("O cachorro faz latidos.");
+       }
+   }
+
+   class Gato implements Barulhento {
+       void fazerBarulho() {
+           System.out.println("O gato faz miados.");
+       }
+   }
+
+   public class Main {
+       static void fazerBarulhoDoAnimal(Barulhento animal) {
+           animal.fazerBarulho();
+       }
+
+       public static void main(String[] args) {
+           Barulhento meuAnimal = new Cachorro(); // Polimorfismo de parametrização
+           fazerBarulhoDoAnimal(meuAnimal); // Chama o método específico da classe Cachorro
+
+           meuAnimal = new Gato();
+           fazerBarulhoDoAnimal(meuAnimal); // Chama o método específico da classe Gato
+       }
+   }
+   ```
+
+O polimorfismo torna o código mais flexível e genérico, permitindo que você escreva código que funciona com uma
+variedade de tipos de objetos. Isso é fundamental para a reutilização de código e para a criação de sistemas flexíveis
+e extensíveis. O Java suporta o polimorfismo de maneira nativa, tornando-o uma linguagem poderosa para a programação
+orientada a objetos.
+#
+### Interface
+
+Uma interface em programação é uma coleção de métodos abstratos (métodos sem implementação) que podem ser implementados
+por qualquer classe que declare que "implementa" essa interface. As interfaces são usadas para definir contratos ou
+padrões de métodos que as classes devem seguir. Elas são uma parte fundamental da Programação Orientada a Objetos (POO)
+e permitem que diferentes classes forneçam implementações específicas para os métodos definidos na interface.
+
+Aqui estão os principais conceitos relacionados a interfaces em Java:
+
+1. **Declaração de Interface**: Para declarar uma interface em Java, você usa a palavra-chave `interface`. Em uma
+interface, você define os métodos que devem ser implementados por qualquer classe que a implemente.
+
+   ```java
+   interface ExemploInterface {
+       void metodo1();
+       int metodo2();
+   }
+   ```
+
+2. **Implementação de Interfaces**: Uma classe pode implementar uma ou mais interfaces usando a palavra-chave
+`implements`. Quando uma classe implementa uma interface, ela deve fornecer uma implementação para todos os métodos
+definidos na interface.
+
+   ```java
+   class MinhaClasse implements ExemploInterface {
+       public void metodo1() {
+           // Implementação do método 1
+       }
+
+       public int metodo2() {
+           // Implementação do método 2
+           return 42;
+       }
+   }
+   ```
+
+3. **Múltiplas Interfaces**: Uma classe pode implementar várias interfaces separadas por vírgulas.
+
+   ```java
+   class MinhaClasse implements Interface1, Interface2 {
+       // Implementações dos métodos das interfaces
+   }
+   ```
+
+4. **Polimorfismo de Interface**: Você pode usar interfaces para criar código genérico que funcione com objetos de
+classes diferentes que implementam a mesma interface.
+
+   ```java
+   void executaMetodo(ExemploInterface objeto) {
+       objeto.metodo1();
+   }
+   ```
+
+5. **Padrão de Assinatura**: As interfaces especificam apenas a assinatura dos métodos (nome, parâmetros e tipo de
+retorno), não sua implementação. Isso cria um contrato que as classes devem seguir.
+
+6. **Default Methods (Métodos com Implementação Padrão)**: A partir do Java 8, interfaces podem conter métodos com
+implementação padrão (também conhecidos como métodos padrão). Esses métodos têm uma implementação padrão e não exigem
+que todas as classes que implementam a interface forneçam sua própria implementação.
+
+   ```java
+   interface ExemploInterface {
+       void metodo1();
+
+       default void metodoComImplementacaoPadrao() {
+           // Implementação padrão do método
+       }
+   }
+   ```
+
+7. **Membros Estáticos**: Interfaces também podem conter membros estáticos, como constantes, que podem ser acessados
+diretamente usando o nome da interface.
+
+   ```java
+   interface ExemploInterface {
+       int MIN = 0;
+       int MAX = 100;
+
+       void metodo1();
+   }
+   ```
+
+As interfaces são usadas para definir contratos claros entre diferentes partes do código. Elas são amplamente usadas em
+Java para criar código modular e flexível. Classes que implementam interfaces podem ser usadas de maneira polimórfica,
+o que significa que você pode criar código genérico que funcione com várias implementações de uma interface. Isso é
+fundamental para criar sistemas flexíveis e extensíveis em Java.
+
+1. **Encapsulamento**: Esconde os detalhes internos de um objeto e permite o acesso controlado aos seus membros.
+
+2. **Abstração**: Simplifica objetos complexos, focando apenas nos aspectos relevantes e essenciais.
+
+3. **Herança**: Permite que uma classe herde atributos e métodos de outra classe, promovendo a reutilização de código.
+
+4. **Polimorfismo**: Permite que objetos de classes diferentes sejam tratados de maneira uniforme, facilitando a escrita de
+código genérico.
