@@ -429,3 +429,82 @@ public abstract class ServicoMensagemInstantanea {
 	}	
 }
 ```
+#
+## Aula 06
+### Interface
+
+> 🔔 Atenção
+> 
+> Antes de tudo, NÃO estamos nos referindo a interface gráfica. Ok? 😁😉
+
+Como vimos anteriormente, **Herança** é um dos pilares de POO, mas uma curiosidade que se deve ser esclarecida, na
+linguagem Java, é que ela não permite o que conhecemos como **Herança Múltipla**.
+
+A medida que vão surgindo novas necessidades, novos equipamentos (objetos), que nascem para atender as expectativas de
+oferecer ferramentas com finalidades bem específicas, como por exemplo: Impressoras, Digitalizadoras, Copiadoras e etc.
+
+Observem que não há uma especificação de marca, modelo e ou capacidades de execução das classes citadas acima, isto é o
+que consideramos o nível mais abstrato da orientação a objetos, que denominamos como **interfaces**.
+
+Ilustração de interfaces dos equipamentos citados acima:
+
+![](https://sintaxe.netlify.app/assets/poo-14.5d056733.png)
+
+Representação de objetos reais com base nas interfaces citadas acima:
+
+![](https://sintaxe.netlify.app/assets/poo-15.53bc165b.png)
+
+> Então o que você está dizendo é que interfaces é o mesmo que classes? Um molde para representação dos objetos reais?
+
+Este é um dos maiores questionamentos dos desenvolvedores, no que se refere a modelo de classes da aplicação.
+
+Como citado acima, Java não permite herança múltipla, logo, vamos imaginar que, recebemos o desafio de projetar uma
+nova classe, para criar objetos que representam as três características citadas acima e que iremos denominar de
+**EquipamentoMultifunional**.
+
+![](https://sintaxe.netlify.app/assets/poo-16.1ac440b7.png)
+
+Para uma melhor compreensão, vamos analisar os diagramas de classes abaixo, comparando o conceito de herança entre,
+classes e interfaces.
+
+**Cenário 1**
+
+![](https://sintaxe.netlify.app/assets/poo-18.065a153a.png)
+
+**Cenário 2**
+
+![](https://sintaxe.netlify.app/assets/poo-19.21941aa0.png)
+
+Antes de iniciarmos a representação via código, devemos compreender que, assim como em classes e métodos abstratos,
+quando herdamos de uma interface, precisamos implementar todos os seus métodos, pois eles são implicitamente
+`public abstract`.
+
+E para encerrar, uma das mais importantes ilustrações quanto ao uso de interfaces para desenvolvimento de componentes
+revolucionários, é apresentado em 2007 por nada mais nada menos que Steve Jobs ao lançar o primeiro **iPhone** da
+história.
+
+![](https://sintaxe.netlify.app/assets/poo-17.39b083f4.png)
+
+> [!NOTE]
+> ℹ️ Informação 
+> 
+> Um único equipamento, que pode ser considerado tanto como um: Reprodutor Musical, Aparelho Telefônico e Navegador na 
+> Internet.
+
+**Referencias:**
+> https://sintaxe.netlify.app/topicos/linguagens/java/intermediario/pilares-poo
+
+> https://glysns.gitbook.io/java-basico/programacao-orientada-a-objetos/pilares-do-poo
+
+> Github do instrutor: https://github.com/glysns
+
+> Linkedin do instrutor: https://www.linkedin.com/in/glysns/
+
+> Meu Github: https://github.com/JMAURICIORLIMA
+
+> Meu Linkedin: https://www.linkedin.com/in/josemauricio-rodriguesdelima/
+
+**Lançamento do Iphone**
+> https://www.youtube.com/watch?t=1101s&v=9ou608QQRq8
+
+***Bons estudos a todos.***
