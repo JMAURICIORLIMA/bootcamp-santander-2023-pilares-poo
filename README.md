@@ -80,7 +80,7 @@ public class MSNMessenger {
     }
 }
 ```
-
+#
 ## Aula 2
 
 ### Encapsulamento
@@ -168,7 +168,7 @@ public class ComputadorPedrinho {
 	}
 }
 ```
-
+#
 ## Aula 03
 ### Herança
 
@@ -279,4 +279,73 @@ reutilização de código em qualquer contexto das nossas aplicações, mas não
 > 
 > Será que todos os sistemas de mensagens realizam as suas operações de uma mesma maneira? E agora ? Este é um trabalho
 > para os pilares Abstração e Polimorfismo.
+#
+## Aula 04
+### Abstração
+
+> Para você ser é preciso você fazer.
+
+Sabemos que qualquer sistema de mensagens instantâneas realiza as mesmas operações de Enviar e Receber Mensagem, dentre
+outras operações comuns ou exclusivas de cada aplicativo disponível no mercado.
+
+Mas será que as ações realizadas, contém o mesmo comportamento ? Acreditamos que não.
+
+> [!NOTE] 
+> 📌 Para fixar
+> 
+> Já imaginou a Microsoft falar para o Facebook: "Ei, toma meu código do MSN!". 😲
+
+O que vale destacar para compreender, é que todo e qualquer sistema de mensagem precisa sim, no mínimo Enviar e Receber
+Mensagem, logo, consideramos se firmar um "contrato" para qualquer um que queira se apresentar assim para o mercado.
+
+Observem a nova estruturação dos códigos abaixo, com base na implementação apresentada no pilar Herança.
+
+**ServicoPai**
+```java
+public abstract class ServicoMensagemInstantanea {
+    public abstract void enviarMensagem();
+    public abstract void receberMensagem();
+}
+```
+
+**MSN**
+```java
+public class MSNMessenger extends ServicoMensagemInstantanea{
+    public void enviarMensagem() {
+        System.out.println("Enviando mensagem pelo MSN Messenger");
+    }
+    public void receberMensagem() {
+        System.out.println("Recebendo mensagem pelo MSN Messenger");
+    }
+}
+```
+
+**Facebook**
+```java
+public class FacebookMessenger extends ServicoMensagemInstantanea {
+    public void enviarMensagem() {
+        System.out.println("Enviando mensagem pelo Facebook Messenger");
+    }
+    public void receberMensagem() {
+        System.out.println("Recebendo mensagem pelo Facebook Messenger");
+    }
+}
+```
+
+**Telegram**
+```java
+public class Telegram extends ServicoMensagemInstantanea {
+    public void enviarMensagem() {
+        System.out.println("Enviando mensagem pelo Telegram");
+    }
+    public void receberMensagem() {
+        System.out.println("Recebendo mensagem pelo Telegram");
+    }
+}
+```
+
+> 🏆 Sucesso 
+> 
+> Em Java, o conceito de abstração é representado pela palavra reservada `abstract` e métodos que NÃO possuem corpo na
+> classe abstrata (pai) e é muito difícil falar de abstração e NÃO mencionar polimorfismo.
 
